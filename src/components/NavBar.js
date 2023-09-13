@@ -16,7 +16,11 @@ function NavBar({ onSearch }) {
         {" "}
         {/* Left Div with Logo */}{" "}
         <div className="flex items-center">
-          <img src={movieAppLogo} alt="Logo" className="h-[50px] w-[186px] " />
+          <img
+            src={movieAppLogo}
+            alt="Logo"
+            className="h-[50px] w-[186px] cursor-pointer "
+          />
         </div>
         {/* Middle Div with Search Bar and Icon */}{" "}
         <div className="flex items-center">
@@ -39,7 +43,11 @@ function NavBar({ onSearch }) {
         {/* Right Div with Sign In Text and Menu Icon */}{" "}
         <div className="flex items-center">
           <span className="text-white mr-[20px] "> Sign In </span>{" "}
-          <img src={menuIcon} alt="Logo" className="h-[36px] w-[36px] " />
+          <img
+            src={menuIcon}
+            alt="menuLogo"
+            className="h-[36px] w-[36px] cursor-pointer "
+          />
         </div>{" "}
       </nav>
     </div>
