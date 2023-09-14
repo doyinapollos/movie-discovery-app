@@ -5,7 +5,7 @@ const AuthRoutes = {
 const NonAuthRoutes = {
   home: "/",
   moviedetails: "/movie/:Id",
-  //mobile: '/mobile',
+  mobile: "/mobile",
 };
 
 export { AuthRoutes, NonAuthRoutes };

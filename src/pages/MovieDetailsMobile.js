@@ -1,4 +1,3 @@
-//import React from "react";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -14,8 +13,8 @@ import starIcon from "../assets/svgs/star-icon.svg";
 import movieTicketsIcon from "../assets/svgs/movie-tickets-icon.svg";
 import moreOptionsMenuIcon from "../assets/svgs/more-option-menu-icon.svg";
 
-function MovieDetails() {
-  const { Id } = useParams();
+function MovieDetailsMobile() {
+  const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const [activeMenuItem, setActiveMenuItem] = useState("home");
 
@@ -28,7 +27,7 @@ function MovieDetails() {
     // Fetch movie details using the movie ID from route params
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${Id}?api_key=0f3f507f4d0ec869bbe4f0b31cf16114`
+        `https://api.themoviedb.org/3/movie/${movieId}?api_key=0f3f507f4d0ec869bbe4f0b31cf16114`
       )
       .then((response) => {
         setMovie(response.data);
@@ -37,7 +36,7 @@ function MovieDetails() {
       .catch((error) => {
         console.error("Error fetching movie details:", error);
       });
-  }, [Id]);
+  }, [movieId]);
 
   if (!movie) {
     return (
@@ -48,14 +47,10 @@ function MovieDetails() {
   return (
     <div className="w-full h-auto flex justify-center items-start poppins ">
       <div className="w-[20%] h-[100vh] rounded-tr-[30px] border border-solid border-gray-300 bg-white flex flex-col justify-between items-center ">
-        <div className=" w-[85%] h-[70px] bg-red-400 md:h-[15%] mt-[15px] cursor-pointer rounded-[5px] p-[15px] md:bg-gray-300 bg-opacity-20 flex items-center ">
+        <div className="w-[85%] h-[70px] mt-[10px] cursor-pointer rounded-[5px] p-[15px] bg-red-700 bg-opacity-20 flex items-center ">
           <Link to="/">
             {" "}
-            <img
-              src={movieAppLogo}
-              alt="Logo"
-              className="h-[50px] w-[100px] md:h-[50px] md:w-[186px] "
-            />
+            <img src={movieAppLogo} alt="Logo" className="h-[50px] w-[60px] " />
           </Link>{" "}
         </div>{" "}
         <div className="w-[85%] h-[30%] text-[600] text-[16px] flex flex-col justify-between items-start ">
@@ -67,9 +62,7 @@ function MovieDetails() {
             />
             <span
               className={`cursor-pointer ${
-                activeMenuItem === "home"
-                  ? "text-[#BE123C] bg-red-200 border-r-2 border-solid border-red-600 p-[10px] "
-                  : ""
+                activeMenuItem === "home" ? "text-[#BE123C]" : ""
               }`}
               onClick={() => handleMenuItemClick("home")}
             >
@@ -84,9 +77,7 @@ function MovieDetails() {
             />
             <span
               className={`cursor-pointer ${
-                activeMenuItem === "movie"
-                  ? "text-[#BE123C]  bg-red-200 border-r-2 border-solid border-red-600 p-[10px]"
-                  : ""
+                activeMenuItem === "movie" ? "text-[#BE123C]" : ""
               }`}
               onClick={() => handleMenuItemClick("movie")}
             >
@@ -102,9 +93,7 @@ function MovieDetails() {
             />
             <span
               className={`cursor-pointer ${
-                activeMenuItem === "tv series"
-                  ? "text-[#BE123C]  bg-red-200 border-r-2 border-solid border-red-600 p-[10px]"
-                  : ""
+                activeMenuItem === "tv series" ? "text-[#BE123C]" : ""
               }`}
               onClick={() => handleMenuItemClick("tv series")}
             >
@@ -120,9 +109,7 @@ function MovieDetails() {
             />
             <span
               className={`cursor-pointer ${
-                activeMenuItem === "Upcoming"
-                  ? "text-[#BE123C]  bg-red-200 border-r-2 border-solid border-red-600 p-[10px]"
-                  : ""
+                activeMenuItem === "Upcoming" ? "text-[#BE123C]" : ""
               }`}
               onClick={() => handleMenuItemClick("Upcoming")}
             >
@@ -197,7 +184,7 @@ function MovieDetails() {
                 <span className="font-[600] "> Overview: </span>{" "}
                 <span className="" data-testid="movie-overview">
                   {" "}
-                  {movie.overview}
+                  {movie.overview}{" "}
                 </span>{" "}
               </p>{" "}
             </div>{" "}
@@ -309,4 +296,4 @@ function MovieDetails() {
   );
 }
 
-export default MovieDetails;
+export default MovieDetailsMobile;

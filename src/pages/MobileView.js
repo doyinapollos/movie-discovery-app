@@ -9,6 +9,7 @@ import arrowRightIcon from "../assets/svgs/arrow-right-icon.svg";
 import MovieCard from "../components/MovieCard";
 import NavBarMobile from "../components/NavBarMobile";
 import FooterMobile from "../components/FooterMobile";
+//import MovieDetailsMobile from "./MovieDetailsMobile";
 //import MovieDetails from "./MovieDetails";
 
 const API_KEY = "0f3f507f4d0ec869bbe4f0b31cf16114";
@@ -141,9 +142,6 @@ function MobileView() {
                 <Link key={item.id} to={`/movie/${item.id}`}>
                   <MovieCard item={item} />{" "}
                 </Link>
-
-                // <MovieCard key={item.id} item={item}
-                // />
               )
             )
           )}{" "}

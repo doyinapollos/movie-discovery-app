@@ -1,4 +1,56 @@
-# Getting Started with Create React App
+movie-discovery-app (React project)
+
+Welcome to my React project! This project allows users to search for movies, view details about them, and save their favorite movies.
+
+## Getting Started
+
+Follow these steps to run the project on your local machine.
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js: [Download and install Node.js](https://nodejs.org/)
+- Git: [Download and install Git](https://git-scm.com/)
+
+### Installation
+
+1. Clone the repository:
+
+   git clone https://github.com/doyinapollos/movie-discovery-app
+
+Navigate to the project directory:
+
+cd your-repo
+
+Install project dependencies:
+
+npm install
+
+Usage
+
+Start the development server:
+
+npm start
+
+This will start the development server, and you can access the project at http://localhost:3000 in your web browser.
+
+Contributing
+
+If you'd like to contribute to this project, please fork the repository and create a pull request.
+
+License
+This project is licensed under the cariebi groups License.
+
+Acknowledgments
+React
+Tailwind CSS
+Javascript
+
+Contact
+If you have any questions or need further assistance, please feel free to contact me at doyinapollos@gmail.com
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +119,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
