@@ -3,6 +3,7 @@ import React from "react";
 //import starIcon from "../assets/svgs/star-icon.svg";
 import imdbLogo from "../assets/svgs/imdb-logo.svg";
 import appleLogo from "../assets/svgs/apple-logo.svg";
+import favoriteIcon from "../assets/svgs/favorite-icon.svg";
 //import profilePhoto from "../assets/images/image-1.jpg";
 
 const getMovieCoverImage = (posterpath) => {
@@ -10,12 +11,26 @@ const getMovieCoverImage = (posterpath) => {
 };
 
 function MovieCard({ item }) {
+  // const [isFavorite, setIsFavorite] = useState(false);
+
+  // // Function to toggle the favorite state
+  // const toggleFavorite = () => {
+  //   setIsFavorite(!isFavorite);
+  // };
+
   return (
     <div>
       <div
-        className="w-[250px] h-[370px] m-[10px] cursor-pointer bg-white flex flex-col justify-center items-center "
+        className="w-[250px] h-[370px] relative m-[10px] cursor-pointer bg-white flex flex-col justify-center items-center "
         data-testid="movie-card"
       >
+        <div className="w-[25px] h-[25px]  absolute top-[10px] right-[10px] rounded-[50px] bg-gray-100 opacity-50 flex justify-center items-center ">
+          <img
+            className="w-[24px] h-[24px] cursor-default "
+            src={favoriteIcon}
+            alt="favorite-icon"
+          />
+        </div>
         <div className="w-[100%] h-[236px] ">
           <img
             className="w-[100%] h-[100%] "
