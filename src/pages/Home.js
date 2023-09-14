@@ -1,6 +1,6 @@
 import React from "react";
 import LaptopView from "./LaptopView";
-//import MobileView from "./MobileView";
+import MobileView from "./MobileView";
 
 function Home() {
   return (
@@ -8,10 +8,9 @@ function Home() {
       <div className="hidden md:block lg:block ">
         <LaptopView />
       </div>{" "}
-      {/* <div className="md:hidden lg:hidden ">
-          <MobileView />
-        </div>{" "}
-      {" "} */}
+      <div className="md:hidden lg:hidden ">
+        <MobileView />
+      </div>{" "}
     </div>
   );
 }

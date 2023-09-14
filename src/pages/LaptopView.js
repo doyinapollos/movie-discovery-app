@@ -51,7 +51,7 @@ function LaptopView() {
 
   return (
     <div className="w-full h-auto flex flex-col justify-start items-center dm-sans ">
-      <div className="w-full h-[531px] bg-image flex z-10 flex-col justify-start items-center  ">
+      <div className="w-[100%] h-[531px] bg-image flex z-10 flex-col justify-start items-center  ">
         <NavBar onSearch={handleSearch} />
         <div className="w-full h-[450px] flex flex-col justify-start items-center ">
           <div className="w-full h-[470px] flex justify-start items-center ">
@@ -104,7 +104,7 @@ function LaptopView() {
               </div>
             </div>
             <div className="w-[30%] h-full flex flex-col justify-center items-center ">
-              <div className="w-[80%] h-[25%] flex flex-col justify-between items-end ">
+              <div className="w-[80%] h-[25%] text-white flex flex-col justify-between items-end ">
                 <span>1</span>
                 <span>2</span>
                 <span>3</span>
@@ -127,7 +127,7 @@ function LaptopView() {
           </div>
         </div>
       </div>
-      <div className="w-[87%] h-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-[#F8F8FF]">
+      <div className="w-[87%] h-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-[#F8F8FF]">
         {loading ? (
           // Display a spinner while loading
           <div className="spinner border-t-4 border-blue-500 border-solid h-12 w-12 rounded-full animate-spin"></div>

@@ -3,55 +3,55 @@ import movieAppLogo from "../assets/svgs/movie-app-logo.svg";
 import searchIcon from "../assets/svgs/search-icon.svg";
 import menuIcon from "../assets/svgs/menu-icon.svg";
 
-function NavBar({ onSearch }) {
+function NavBarMobile() {
   const [query, setQuery] = useState("");
 
-  const handleSearch = () => {
+  const handleSearch = ({ onSearch }) => {
     onSearch(query);
   };
 
   return (
     <div className="w-full h-auto flex flex-col justify-start items-center ">
-      <nav className="w-[90%] h-[80px]  p-4 flex justify-between items-center">
+      <nav className="w-[98%] h-[60px]  p-4 flex justify-between items-center">
         {" "}
         {/* Left Div with Logo */}{" "}
         <div className="flex items-center">
           <img
             src={movieAppLogo}
             alt="Logo"
-            className="md:h-[40px] md:w-[150px] lg:h-[50px] w-[186px] cursor-pointer "
+            className="h-[40px] w-[100px] cursor-pointer "
           />
-        </div>{" "}
+        </div>
         {/* Middle Div with Search Bar and Icon */}{" "}
         <div className="flex items-center">
-          <div className="md:w-[350px] md:h-[38px] lg:w-[450px] h-[38px] bg-black opacity-50 border border-solid border-gray-200 flex justify-center items-center rounded-[6px] ">
+          <div className="w-[150px] h-[28px] bg-black opacity-50 border border-solid border-gray-200 flex justify-center items-center rounded-[6px] ">
             <input
               type="text"
-              placeholder="Search by movie title"
+              placeholder="movie title"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="md:w-[300px] md:h-[36px] lg:w-[400px] h-[38px] text-white border-none pl-[5px] bg-black opacity-50 "
+              className="w-[133px] h-[30px] text-white border-none pl-[5px] bg-black opacity-50 "
             />
             <img
               src={searchIcon}
               alt="Logo"
               className="h-[16px] w-[16px] text-gray-700 cursor-pointer "
               onClick={handleSearch}
-            />{" "}
+            />
           </div>{" "}
-        </div>{" "}
+        </div>
         {/* Right Div with Sign In Text and Menu Icon */}{" "}
         <div className="flex items-center">
-          <span className="text-white mr-[20px] "> Sign In </span>{" "}
+          <span className="text-white mr-[10px] text-[14px] "> Sign In </span>{" "}
           <img
             src={menuIcon}
             alt="menuLogo"
-            className="h-[36px] w-[36px] cursor-pointer "
+            className="h-[26px] w-[26px] cursor-pointer "
           />
         </div>{" "}
-      </nav>{" "}
+      </nav>
     </div>
   );
 }
 
-export default NavBar;
+export default NavBarMobile;

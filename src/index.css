@@ -2,23 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 .bg-image {
-  background-image: url("./assets/svgs/banner.svg");
-  /* Replace with the actual path to your image */
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url("./assets/svgs/banner.svg");
+    /* Replace with the actual path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .bg-image2 {
-  background-image: url("./assets/svgs/banner-play-movie.svg");
-  /* Replace with the actual path to your image */
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url("./assets/svgs/banner-play-movie.svg");
+    /* Replace with the actual path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-image3 {
+    background-image: url("./assets/svgs/movie-cover-image-2.svg");
+    /* Replace with the actual path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .poppins {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .dm-sans {
-  font-family: "DM Sans", sans-serif;
+    font-family: "DM Sans", sans-serif;
 }
