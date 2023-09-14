@@ -40,7 +40,9 @@ function MovieDetails() {
   }, [Id]);
 
   if (!movie) {
-    return <div> Loading... </div>;
+    return (
+      <div className="spinner border-t-4 border-blue-500 border-solid h-12 w-12 rounded-full animate-spin flex justify-center items-center"></div>
+    );
   }
 
   return (
@@ -185,7 +187,10 @@ function MovieDetails() {
             <div className="w-[75%] h-full  font-[400] flex justify-start items-start ">
               <p className="text-[14px]  ">
                 <span className="font-[600] "> Overview: </span>{" "}
-                <span> {movie.overview} </span>{" "}
+                <span className="" data-testid="movie-overview">
+                  {" "}
+                  {movie.overview}{" "}
+                </span>{" "}
               </p>{" "}
             </div>{" "}
             <div className="w-[25%] h-full flex flex-col justify-center items-end ">
@@ -215,15 +220,25 @@ function MovieDetails() {
         <div className="w-[95%] h-[130px] mt-[10px] border-t border-solid border-gray flex justify-between items-center ">
           <div className="w-[75%] h-full text-[12px] flex flex-col justify-between items-start ">
             <p>
-              Original title: <span> {movie.original_title} </span>{" "}
+              Original title:{" "}
+              <span className="" data-testid="movie-title">
+                {" "}
+                {movie.title}{" "}
+              </span>{" "}
             </p>{" "}
             <p>
               Realeased date:
-              <span> {movie.release_date} </span>{" "}
+              <span className="" data-testid="movie-release-date">
+                {" "}
+                {movie.release_date}{" "}
+              </span>{" "}
             </p>{" "}
             <p>
               Vote count:
-              <span> {movie.vote_count} </span>{" "}
+              <span className="" data-testid="movie-runtime">
+                {" "}
+                {movie.vote_count}{" "}
+              </span>{" "}
             </p>{" "}
             <div className="w-[90%] h-[40px] border border-solid border-[#C7C7C7] flex justify-start items-center ">
               <button class="w-[230px] h-[40px] border border-solid border-[#BE123C] bg-[#BE123C] hover:bg-red-700 rounded-[5px] flex justify-center items-center ">

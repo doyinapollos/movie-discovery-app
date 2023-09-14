@@ -12,20 +12,29 @@ const getMovieCoverImage = (posterpath) => {
 function MovieCard({ item }) {
   return (
     <div>
-      <div className="w-[250px] h-[370px] m-[10px] cursor-pointer bg-white flex flex-col justify-center items-center ">
+      <div
+        className="w-[250px] h-[370px] m-[10px] cursor-pointer bg-white flex flex-col justify-center items-center "
+        data-testid="movie-card"
+      >
         <div className="w-[100%] h-[236px] ">
           <img
             className="w-[100%] h-[100%] "
+            data-testid="movie-poster"
             src={getMovieCoverImage(item.poster_path)}
             alt="movieCoverImage"
           />
         </div>
         <div className="w-[95%] h-[18px] text-[12px] my-[5px] text-[#A1A1A1] flex justify-start items-center ">
-          <span> {item.release_date}</span>
+          <span className="" data-testid="movie-release-date">
+            {" "}
+            {item.release_date}
+          </span>
         </div>
         <div className="w-[95%] h-[46px] text-[16px] my-[5px] font-[700] font-clashDisplay text-[#111827] ">
           {/* <span>Spider - Man: Into The Spider Verse </span> */}
-          <span>{item.title}</span>
+          <span className="" data-testid="movie-title">
+            {item.title}
+          </span>
         </div>
         <div className="w-[95%] h-[20px] my-[5px] flex justify-between items-center ">
           <div className="w-[100px] h-[20px] text-[12px] flex justify-between items-center ">

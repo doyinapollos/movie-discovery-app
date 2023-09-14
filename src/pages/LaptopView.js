@@ -34,6 +34,8 @@ function LaptopView() {
       });
   }, []);
 
+  const slicedMovies = movies.slice(0, 10); // Get the first 10 movies
+
   const handleSearch = (query) => {
     const filtered = movies.filter((movie) =>
       movie.title.toLowerCase().includes(query.toLowerCase())
@@ -125,13 +127,13 @@ function LaptopView() {
           </div>
         </div>
       </div>
-      <div className="w-full h-auto flex justify-center items-center flex-wrap bg-[#F8F8FF]">
+      <div className="w-[87%] h-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-[#F8F8FF]">
         {loading ? (
           // Display a spinner while loading
           <div className="spinner border-t-4 border-blue-500 border-solid h-12 w-12 rounded-full animate-spin"></div>
         ) : (
           // Map through the data and render Card components
-          (filteredMovies.length > 0 ? filteredMovies : movies).map(
+          (filteredMovies.length > 0 ? filteredMovies : slicedMovies).map(
             (item, index) => (
               <Link key={item.id} to={`/movie/${item.id}`}>
                 <MovieCard item={item} />
