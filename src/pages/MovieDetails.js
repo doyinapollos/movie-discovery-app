@@ -156,7 +156,7 @@ function MovieDetails() {
           <span className="cursor-pointer"> Logout </span>{" "}
         </div>{" "}
       </div>{" "}
-      <div className="w-[100%] h-[100vh] md:w-[80%] flex flex-col justify-start items-center ">
+      <div className="w-[100%] h-[950px] md:h-[100vh] md:w-[80%] flex flex-col justify-start items-center ">
         <div className="w-[100%] h-[60px] bg-gray-700 opacity-50 md:hidden lg:hidden ">
           <NavBarMobile />
         </div>
