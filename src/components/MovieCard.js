@@ -24,7 +24,7 @@ function MovieCard({ item }) {
         className="w-[250px] h-[370px] relative m-[10px] cursor-pointer bg-white flex flex-col justify-center items-center "
         data-testid="movie-card"
       >
-        <div className="w-[25px] h-[25px]  absolute top-[10px] right-[10px] rounded-[50px] bg-gray-100 opacity-50 flex justify-center items-center ">
+        <div className="w-[25px] h-[25px] z-10  absolute top-[10px] right-[10px] rounded-[50px] bg-gray-100 opacity-50 flex justify-center items-center ">
           <img
             className="w-[24px] h-[24px] cursor-default "
             src={favoriteIcon}
