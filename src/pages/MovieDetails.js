@@ -50,7 +50,7 @@ function MovieDetails() {
 
   return (
     <div className="w-full h-auto flex justify-center items-start poppins ">
-      <div className="hidden lg:hidden lg:flex flex-col justify-between items-center w-[20%] h-[100vh] rounded-tr-[30px] border border-solid border-gray-300 bg-white ">
+      <div className="hidden md:hidden lg:flex flex-col justify-between items-center w-[20%] h-[100vh] rounded-tr-[30px] border border-solid border-gray-300 bg-white ">
         <div className=" w-[85%] mt-[15px] cursor-pointer rounded-[5px] p-[15px] flex justify-center items-center bg-gray-500 bg-opacity-20 h-[50px] lg:h-[100px] ">
           <Link to="/">
             {" "}
