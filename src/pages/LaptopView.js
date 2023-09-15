@@ -13,6 +13,7 @@ import NavBar from "../components/NavBar";
 
 const API_KEY = "0f3f507f4d0ec869bbe4f0b31cf16114";
 const BASE_URL = "https://api.themoviedb.org/3";
+//https://api.themoviedb.org/3/movie/popular?language=en-US&page=1
 
 function LaptopView() {
   const [movies, setMovies] = useState([]);
@@ -23,7 +24,9 @@ function LaptopView() {
   useEffect(() => {
     // Fetch data from your API using Axios
     axios
-      .get(`${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
+      .get(
+        `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
+      )
       .then((response) => {
         setMovies(response.data.results);
         setLoading(false);
@@ -150,7 +153,7 @@ function LaptopView() {
             )
           )
         )}{" "}
-      </div>
+      </div>{" "}
       <Footer />
     </div>
   );

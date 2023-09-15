@@ -1,4 +1,5 @@
-import React from "react";
+//import React from "react";
+import React, { useState } from "react";
 //import movieCoverImage2 from "../assets/svgs/movie-cover-image-2.svg";
 //import starIcon from "../assets/svgs/star-icon.svg";
 import imdbLogo from "../assets/svgs/imdb-logo.svg";
@@ -11,12 +12,13 @@ const getMovieCoverImage = (posterpath) => {
 };
 
 function MovieCard({ item }) {
-  // const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
-  // // Function to toggle the favorite state
-  // const toggleFavorite = () => {
-  //   setIsFavorite(!isFavorite);
-  // };
+  // Function to toggle the favorite state without propagating click event
+  const handleFavoriteClick = (event) => {
+    event.stopPropagation(); // Prevent event from propagating to the parent element
+    setIsFavorite(!isFavorite);
+  };
 
   return (
     <div>
@@ -26,7 +28,10 @@ function MovieCard({ item }) {
       >
         <div className="w-[25px] h-[25px] z-10  absolute top-[10px] right-[10px] rounded-[50px] bg-gray-100 opacity-50 flex justify-center items-center ">
           <img
-            className="w-[24px] h-[24px] cursor-default "
+            className={`favorite-icon ${
+              isFavorite ? "text-red-500" : "text-gray-500"
+            }`}
+            onClick={handleFavoriteClick}
             src={favoriteIcon}
             alt="favorite-icon"
           />

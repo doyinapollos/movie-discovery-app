@@ -156,8 +156,8 @@ function MovieDetails() {
           <span className="cursor-pointer"> Logout </span>{" "}
         </div>{" "}
       </div>{" "}
-      <div className="w-[100%] h-[950px] lg:h-[100vh] lg:w-[80%] flex flex-col justify-start items-center ">
-        <div className="w-[100%] h-[60px] bg-gray-700 opacity-50 lg:block lg:hidden ">
+      <div className="w-[100%] h-[950px] lg:h-[100vh] lg:w-[95%] flex flex-col justify-start items-center ">
+        <div className="w-[100%] h-[60px] bg-gray-700 opacity-50 lg:hidden ">
           <NavBarMobile />
         </div>
         <div className="h-[240px] w-[100%] lg:w-[95%] mt-[0px] lg:h-[300px] bg-image2 bg-opacity-50 lg:rounded-[30px] lg:mt-[15px] flex flex-col justify-center items-center ">
@@ -236,10 +236,9 @@ function MovieDetails() {
             <p>
               Title:{" "}
               <span className="" data-testid="movie-title">
-                {" "}
-                {movie.title}{" "}
-              </span>{" "}
-            </p>{" "}
+                {movie.title}
+              </span>
+            </p>
             <p>
               Realeased date:
               <span className="" data-testid="movie-release-date">
