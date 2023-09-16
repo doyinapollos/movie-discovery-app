@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import SideBar from "../john/SideBar";
+import SideBar from "./SideBar";
 import "./MovieDetails.css";
 import ReactPlayer from "react-player";
 function MovieDetails() {

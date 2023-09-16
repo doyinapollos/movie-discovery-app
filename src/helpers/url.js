@@ -1,11 +1,11 @@
-const AuthRoutes = {
-  //dashboard: '/dashboard',
-};
+// const AuthRoutes = {
+//   //dashboard: '/dashboard',
+// };
 
-const NonAuthRoutes = {
-  home: "/",
-  moviedetails: "/movie/:Id",
-  mobile: "/mobile",
-};
+// const NonAuthRoutes = {
+//   home: "/",
+//   moviedetails: "/movie/:Id",
+//   //mobile: "/mobile",
+// };
 
-export { AuthRoutes, NonAuthRoutes };
+// export { AuthRoutes, NonAuthRoutes };

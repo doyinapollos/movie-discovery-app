@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import "./SearchBar.css";
+//import "./SearchingBar.css";
 
-function SearchBar({ onSearch }) {
+function SearchingBar({ onSearch }) {
   const [query, setQuery] = useState("");
+
   const handleSearch = () => {
     onSearch(query);
   };
+
   return (
     <div className="searching-bar-container">
       <input
@@ -21,4 +23,5 @@ function SearchBar({ onSearch }) {
     </div>
   );
 }
-export default SearchBar;
+
+export default SearchingBar;

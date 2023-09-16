@@ -6,16 +6,16 @@ import imdbLogo from "../assets/svgs/imdb-logo.svg";
 import appleLogo from "../assets/svgs/apple-logo.svg";
 import platMovieIconRed from "../assets/svgs/play-movie-icon-red.svg";
 import arrowRightIcon from "../assets/svgs/arrow-right-icon.svg";
-import Footer from "../components/Footer";
-import MovieCard from "../components/MovieCard";
-import NavBar from "../components/NavBar";
+import MovieCard from "../pages/MovieCard";
+import NavBarMobile from "../components/NavBarMobile";
+import FooterMobile from "../components/FooterMobile";
+//import MovieDetailsMobile from "./MovieDetailsMobile";
 //import MovieDetails from "./MovieDetails";
 
 const API_KEY = "0f3f507f4d0ec869bbe4f0b31cf16114";
 const BASE_URL = "https://api.themoviedb.org/3";
-//https://api.themoviedb.org/3/movie/popular?language=en-US&page=1
 
-function LaptopView() {
+function MobileView() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filteredMovies, setFilteredMovies] = useState([]);
@@ -24,9 +24,7 @@ function LaptopView() {
   useEffect(() => {
     // Fetch data from your API using Axios
     axios
-      .get(
-        `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
-      )
+      .get(`${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
       .then((response) => {
         setMovies(response.data.results);
         setLoading(false);
@@ -50,18 +48,16 @@ function LaptopView() {
     setFilteredMovies(filtered);
   };
 
-  console.log(movies);
-
   return (
-    <div className="w-full h-auto flex flex-col justify-start items-center dm-sans ">
-      <div className="w-[100%] h-[531px] bg-image flex z-10 flex-col justify-start items-center  ">
-        <NavBar onSearch={handleSearch} />{" "}
+    <div>
+      <div className="w-[100%] h-[531px] bg-image3 flex z-10 flex-col justify-start items-center  ">
+        <NavBarMobile onSearch={handleSearch} />{" "}
         <div className="w-full h-[450px] flex flex-col justify-start items-center ">
           <div className="w-full h-[470px] flex justify-start items-center ">
             <div className="w-[70%] h-full flex flex-col justify-center items-center ">
               <div className="w-[80%] h-[75%] flex flex-col justify-between items-start ">
                 <div>
-                  <p className="font-[700] text-[40px] text-white ">
+                  <p className="font-[700] text-[30px] text-white ">
                     John Wick 3: <br />
                     Parabellum{" "}
                   </p>{" "}
@@ -115,48 +111,45 @@ function LaptopView() {
           </div>{" "}
         </div>{" "}
       </div>{" "}
-      <div className="w-full h-[80px] flex flex-col justify-center items-center bg-[#F8F8FF] ">
+      <div className="w-full h-[60px] flex flex-col justify-center items-center bg-[#F8F8FF] ">
         <div className="w-[85%] h-full flex justify-between items-center ">
-          <p className="text-[36px] font-[700] text-[#000] ">
+          <p className="text-[26px] font-[700] text-[#000] ">
             {" "}
             Featured Movie{" "}
           </p>{" "}
           <div className="flex justify-center items-center ">
-            <p className="text-[18px] text-[#BE123C] font-[400] "> See more </p>{" "}
+            <p className="text-[14px] text-[#BE123C] font-[400] "> See more </p>{" "}
             <img
               src={arrowRightIcon}
               alt="arror-right"
-              className="h-[14px] w-[16px] text-[#BE123C] mt-[4px] ml-[4px] "
+              className="h-[12px] w-[14px] text-[#BE123C] mt-[4px] ml-[4px] "
             />
           </div>{" "}
         </div>{" "}
       </div>{" "}
-      <div className="w-[87%] h-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-[#F8F8FF]">
-        {" "}
-        {loading ? (
-          // Display a spinner while loading
-          <div className="flex justify-center items-center h-screen ">
+      <div className="w-[80%] h-auto flex flex-col justify-center items-center ">
+        <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-[#F8F8FF]">
+          {" "}
+          {loading ? (
+            // Display a spinner while loading
             <div className="spinner border-t-4 border-blue-500 border-solid h-12 w-12 rounded-full animate-spin">
               {" "}
-            </div>{" "}
-          </div>
-        ) : (
-          // Map through the data and render Card components
-          (filteredMovies.length > 0 ? filteredMovies : slicedMovies).map(
-            (item, index) => (
-              <Link key={item.id} to={`/movie/${item.id}`}>
-                <MovieCard item={item} />{" "}
-              </Link>
-
-              // <MovieCard key={item.id} item={item}
-              // />
+            </div>
+          ) : (
+            // Map through the data and render Card components
+            (filteredMovies.length > 0 ? filteredMovies : slicedMovies).map(
+              (item, index) => (
+                <Link key={item.id} to={`/movie/${item.id}`}>
+                  <MovieCard item={item} />{" "}
+                </Link>
+              )
             )
-          )
-        )}{" "}
+          )}{" "}
+        </div>{" "}
       </div>{" "}
-      <Footer />
+      <FooterMobile />
     </div>
   );
 }
 
-export default LaptopView;
+export default MobileView;

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import SearchBar from "./SearchBar";
+import SearchingBar from "../components/SearchingBar";
 import "./SearchResults.css";
 
 function SearchResults() {
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState(false);
+
   const handleSearch = async (searchQuery) => {
     try {
       setSearch(false);
@@ -20,6 +21,7 @@ function SearchResults() {
           },
         }
       );
+
       setMovies(response.data.results);
       setSearch(true);
     } catch (error) {
@@ -28,9 +30,10 @@ function SearchResults() {
       setLoading(false);
     }
   };
+
   return (
     <div>
-      <SearchBar onSearch={handleSearch} />{" "}
+      <SearchingBar onSearch={handleSearch} />{" "}
       {loading && <p className="loading-indicator"> Loading... </p>}{" "}
       {!loading && search === true && movies.length === 0 && (
         <p className="no-results"> Sorry!No results found. </p>
@@ -50,4 +53,5 @@ function SearchResults() {
     </div>
   );
 }
+
 export default SearchResults;
