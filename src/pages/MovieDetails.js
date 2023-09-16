@@ -194,13 +194,9 @@ function MovieDetails() {
         <div className="w-[95%] h-[230px] lg:h-[90px] flex justify-between items-center ">
           <div className=" w-[100%] h-full flex-col flex lg:flex-row justify-between items-center ">
             <div className="w-[75%] h-full  font-[400] flex justify-start items-start ">
-              <p className="text-[14px]  ">
-                <span className="font-[600] "> Overview: </span>{" "}
-                <span className="" data-testid="movie-overview">
-                  {" "}
-                  {movie.overview}
-                </span>{" "}
-              </p>{" "}
+              <p data-testid="movie-overview" className="text-[14px]  ">
+                Overview: {movie.overview}
+              </p>
             </div>{" "}
             <div className="w-[100%] items-center lg:w-[25%] lg:h-full flex flex-col justify-center lg:items-end ">
               <button class="w-[200px] h-[30px] lg:w-[220px] mx-[7px] mb-[10px] border border-solid border-[#BE123C] bg-[#BE123C] hover:bg-red-700 rounded-[5px] flex justify-center items-center ">
@@ -228,25 +224,16 @@ function MovieDetails() {
         </div>{" "}
         <div className="w-[95%] h-[250px] flex-col lg:h-[130px] mt-[10px] border-t border-solid border-gray flex lg:flex-row justify-between items-center ">
           <div className="w-[75%] h-[60%] mt-[7px] lg:mt-[0px] lg:w-[75%] lg:h-full text-[12px] flex flex-col justify-between items-start ">
-            <p>
+            <p data-testid="movie-title">
               Title:
-              <span className="" data-testid="movie-title">
-                {movie.title}
-              </span>
+              {movie.title}
             </p>
-            <p>
-              Realeased date:
-              <span className="" data-testid="movie-release-date">
-                {movie.release_date}
-              </span>
+            <p data-testid="movie-release-date">
+              Release Date (UTC): {movie.release_date}
             </p>
-            <p>
-              Vote count:
-              <span className="" data-testid="movie-runtime">
-                {" "}
-                {movie.vote_count}
-              </span>
-            </p>{" "}
+            <p data-testid="movie-runtime">
+              Runtime (minutes): {movie.runtime}{" "}
+            </p>
             <div className="w-[100%] h-[40%] border-none flex-col justify-between lg:w-[661px] lg:h-[40px] border lg:border-solid border-[#C7C7C7] flex lg:flex-row lg:justify-start items-center ">
               <button class="mb-[7px] w-[230px] h-[30px] lg:h-[40px] lg:mb-[0px] border border-solid border-[#BE123C] bg-[#BE123C] hover:bg-red-700 rounded-[5px] flex justify-center items-center ">
                 <span class="text-white text-[12px] font-[500] pl-[7px] ">
