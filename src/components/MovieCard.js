@@ -1,10 +1,8 @@
-//import React from "react";
-import React, { useState } from "react";
+import React from "react";
 //import movieCoverImage2 from "../assets/svgs/movie-cover-image-2.svg";
 //import starIcon from "../assets/svgs/star-icon.svg";
 import imdbLogo from "../assets/svgs/imdb-logo.svg";
 import appleLogo from "../assets/svgs/apple-logo.svg";
-import favoriteIcon from "../assets/svgs/favorite-icon.svg";
 //import profilePhoto from "../assets/images/image-1.jpg";
 
 const getMovieCoverImage = (posterpath) => {
@@ -12,47 +10,25 @@ const getMovieCoverImage = (posterpath) => {
 };
 
 function MovieCard({ item }) {
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  // Function to toggle the favorite state without propagating click event
-  const handleFavoriteClick = (event) => {
-    event.stopPropagation(); // Prevent event from propagating to the parent element
-    setIsFavorite(!isFavorite);
-  };
-
   return (
     <div>
-      <div
-        className="w-[250px] h-[370px] relative m-[10px] cursor-pointer bg-white flex flex-col justify-center items-center "
-        data-testid="movie-card"
-      >
-        <div className="w-[25px] h-[25px] z-10  absolute top-[10px] right-[10px] rounded-[50px] bg-gray-100 opacity-50 flex justify-center items-center ">
-          <img
-            className={`favorite-icon ${
-              isFavorite ? "text-red-500" : "text-gray-500"
-            }`}
-            onClick={handleFavoriteClick}
-            src={favoriteIcon}
-            alt="favorite-icon"
-          />
-        </div>
+      <div className="w-[250px] h-[370px] m-[10px] cursor-pointer bg-white flex flex-col justify-center items-center ">
         <div className="w-[100%] h-[236px] ">
           <img
-            className="w-[100%] h-[100%] "
             data-testid="movie-poster"
+            className="w-[100%] h-[100%] "
             src={getMovieCoverImage(item.poster_path)}
             alt="movieCoverImage"
           />
         </div>
         <div className="w-[95%] h-[18px] text-[12px] my-[5px] text-[#A1A1A1] flex justify-start items-center ">
-          <span className="" data-testid="movie-release-date">
-            {" "}
+          <span data-testid="movie-release-date" className="">
             {item.release_date}
           </span>
         </div>
         <div className="w-[95%] h-[46px] text-[16px] my-[5px] font-[700] font-clashDisplay text-[#111827] ">
           {/* <span>Spider - Man: Into The Spider Verse </span> */}
-          <span className="" data-testid="movie-title">
+          <span data-testid="movie-title" className="">
             {item.title}
           </span>
         </div>

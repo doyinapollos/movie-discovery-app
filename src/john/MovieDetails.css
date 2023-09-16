@@ -1,0 +1,31 @@
+.details_container {
+  flex: 1;
+  background-color: white;
+  color: black;
+  height: 100vh;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.container {
+  display: flex;
+  font-family: "IBM plex sana-serif
+ Looped", sans-serif;
+}
+
+.movie-title {
+  font-size: 24px;
+  color: #333;
+}
+
+.movie-release-date {
+  font-size: 16px;
+  color: #777;
+  font-weight: bold;
+}
+
+.movie-overview {
+  font-size: 18px;
+  color: #444;
+  width: 600px;
+}

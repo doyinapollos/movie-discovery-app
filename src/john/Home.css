@@ -1,0 +1,36 @@
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.home {
+  padding-top: 50rem;
+}
+
+.movie-grid h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.seach {
+  padding-top: 4rem;
+}
+
+.homescreen {
+  padding-bottom: 40rem;
+}
+
+.home_title {
+  padding-top: 2rem;
+  font-weight: bold;
+  color: black;
+  font-size: x-large;
+}

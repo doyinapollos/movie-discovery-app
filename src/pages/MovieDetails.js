@@ -14,17 +14,14 @@ import starIcon from "../assets/svgs/star-icon.svg";
 import movieTicketsIcon from "../assets/svgs/movie-tickets-icon.svg";
 import moreOptionsMenuIcon from "../assets/svgs/more-option-menu-icon.svg";
 import NavBarMobile from "../components/NavBarMobile";
-
 function MovieDetails() {
   const { Id } = useParams();
   const [movie, setMovie] = useState(null);
   const [activeMenuItem, setActiveMenuItem] = useState("home");
-
   // Function to handle menu item click and update the active state
   const handleMenuItemClick = (menuItem) => {
     setActiveMenuItem(menuItem);
   };
-
   useEffect(() => {
     // Fetch movie details using the movie ID from route params
     axios
@@ -39,7 +36,6 @@ function MovieDetails() {
         console.error("Error fetching movie details:", error);
       });
   }, [Id]);
-
   if (!movie) {
     return (
       <div className="flex justify-center items-center h-screen ">
@@ -47,7 +43,6 @@ function MovieDetails() {
       </div>
     );
   }
-
   return (
     <div className="w-full h-auto flex justify-center items-start poppins ">
       <div className="hidden md:hidden lg:flex flex-col justify-between items-center w-[20%] h-[100vh] rounded-tr-[30px] border border-solid border-gray-300 bg-white ">
@@ -234,7 +229,7 @@ function MovieDetails() {
         <div className="w-[95%] h-[250px] flex-col lg:h-[130px] mt-[10px] border-t border-solid border-gray flex lg:flex-row justify-between items-center ">
           <div className="w-[75%] h-[60%] mt-[7px] lg:mt-[0px] lg:w-[75%] lg:h-full text-[12px] flex flex-col justify-between items-start ">
             <p>
-              Title:{" "}
+              Title:
               <span className="" data-testid="movie-title">
                 {movie.title}
               </span>
@@ -242,16 +237,15 @@ function MovieDetails() {
             <p>
               Realeased date:
               <span className="" data-testid="movie-release-date">
-                {" "}
-                {movie.release_date}{" "}
-              </span>{" "}
-            </p>{" "}
+                {movie.release_date}
+              </span>
+            </p>
             <p>
               Vote count:
               <span className="" data-testid="movie-runtime">
                 {" "}
-                {movie.vote_count}{" "}
-              </span>{" "}
+                {movie.vote_count}
+              </span>
             </p>{" "}
             <div className="w-[100%] h-[40%] border-none flex-col justify-between lg:w-[661px] lg:h-[40px] border lg:border-solid border-[#C7C7C7] flex lg:flex-row lg:justify-start items-center ">
               <button class="mb-[7px] w-[230px] h-[30px] lg:h-[40px] lg:mb-[0px] border border-solid border-[#BE123C] bg-[#BE123C] hover:bg-red-700 rounded-[5px] flex justify-center items-center ">
@@ -313,5 +307,4 @@ function MovieDetails() {
     </div>
   );
 }
-
 export default MovieDetails;

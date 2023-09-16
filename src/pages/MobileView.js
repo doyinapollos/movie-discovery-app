@@ -51,7 +51,7 @@ function MobileView() {
   return (
     <div>
       <div className="w-[100%] h-[531px] bg-image3 flex z-10 flex-col justify-start items-center  ">
-        <NavBarMobile onSearch={handleSearch} />
+        <NavBarMobile onSearch={handleSearch} />{" "}
         <div className="w-full h-[450px] flex flex-col justify-start items-center ">
           <div className="w-full h-[470px] flex justify-start items-center ">
             <div className="w-[70%] h-full flex flex-col justify-center items-center ">
@@ -145,8 +145,8 @@ function MobileView() {
               )
             )
           )}{" "}
-        </div>
-      </div>
+        </div>{" "}
+      </div>{" "}
       <FooterMobile />
     </div>
   );
