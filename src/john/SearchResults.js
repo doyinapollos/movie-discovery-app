@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import SearchingBar from "../components/SearchingBar";
+import SearchingBar from "./SearchingBar";
 import "./SearchResults.css";
 
 function SearchResults() {
